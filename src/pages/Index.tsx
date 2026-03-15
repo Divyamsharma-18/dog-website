@@ -64,10 +64,10 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Nutrition They'll <span className="text-primary">Love</span>
+            Why Dog Parents <span className="text-primary">Love Us</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              At Dog Mom’s Kitchen, we believe every dog deserves food made from real, wholesome ingredients — no fillers, no artificial preservatives. Our recipes are developed with veterinary nutritionists and sourced from trusted local farms.
+              At Dog Mom’s Kitchen, we believe every dog deserves food made from real, wholesome ingredients, no fillers, no artificial preservatives. Our recipes are developed with veterinary nutritionists and sourced from trusted local farms.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">

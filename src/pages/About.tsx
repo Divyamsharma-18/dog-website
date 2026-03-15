@@ -46,13 +46,13 @@ const About = () => {
                 It all started with a vet visit. When Biscuit developed food sensitivities, Alex and Maria realized that most commercial dog foods were packed with fillers, by-products, and artificial additives. They couldn't find a single brand that met their standards.
               </p>
               <p>
-                So they made their own. Starting with simple recipes of real chicken, fresh vegetables, and superfoods, they cooked Biscuit's meals at home. The transformation was remarkable — shinier coat, more energy, and a happier pup.
+                So they made their own. Starting with simple recipes of real chicken, fresh vegetables, and superfoods, they cooked Biscuit's meals at home. The transformation was remarkable, shinier coat, more energy, and a happier pup.
               </p>
               <p>
                 Friends and neighbors noticed and started asking for the same meals for their dogs. Word spread, and PawFresh was born. Today, we serve thousands of happy dogs across the country with the same commitment to quality that started in our kitchen.
               </p>
               <p>
-                Every bag, can, and treat we sell carries our promise: real food, real ingredients, real love. Because at PawFresh, we don't just make dog food — we nourish family.
+                Every bag, can, and treat we sell carries our promise: real food, real ingredients, real love. Because at PawFresh, we don't just make dog food, we nourish family.
               </p>
             </div>
           </motion.div>

@@ -26,7 +26,7 @@ const Shop = () => {
   return (
     <div>
       {/* Banner */}
-      <section className="bg-secondary py-16 text-center">
+      <section className="bg-[#1d3463] py-16 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-secondary-foreground">Our Products</h1>
           <p className="text-secondary-foreground/80 mt-2">Premium nutrition for every dog, every stage of life</p>

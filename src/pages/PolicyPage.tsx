@@ -8,7 +8,7 @@ const policies: Record<string, { title: string; content: string[] }> = {
       "At PawFresh, we stand behind the quality of our products. If you're not completely satisfied, we're here to help.",
       "Returns: You may return unopened products within 30 days of purchase for a full refund. Products must be in their original packaging.",
       "Damaged Products: If your order arrives damaged, please contact us within 48 hours with photos. We'll send a replacement at no cost.",
-      "Satisfaction Guarantee: If your dog doesn't love our food, contact us within 30 days for a full refund — no questions asked.",
+      "Satisfaction Guarantee: If your dog doesn't love our food, contact us within 30 days for a full refund, no questions asked.",
       "Refund Processing: Refunds are processed within 5-7 business days after we receive the returned item or approve a satisfaction guarantee claim.",
     ],
   },
@@ -30,7 +30,7 @@ const policies: Record<string, { title: string; content: string[] }> = {
       "Express Shipping: 1-2 business days. Available at checkout for $9.99.",
       "Order Processing: Orders placed before 2 PM EST on business days are shipped the same day.",
       "Tracking: You'll receive a tracking number via email once your order ships.",
-      "International: We currently don't ship outside the US and Canada. We're working on expanding — stay tuned!",
+      "International: We currently don't ship outside the US and Canada. We're working on expanding, stay tuned!",
     ],
   },
   "privacy-policy": {
