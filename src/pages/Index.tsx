@@ -57,9 +57,6 @@ const ReviewsMarquee = () => {
         <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center">
           What Dog Parents Say
         </h2>
-        <p className="text-center text-muted-foreground text-sm mt-2">
-          {isPaused ? "▶ Click any card to resume" : "⏸ Click any card to pause · Drag to scroll"}
-        </p>
       </div>
       <div
         ref={scrollRef}
