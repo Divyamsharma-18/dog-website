@@ -44,7 +44,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Contact Us</h4>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <p>hello@pawfresh.com</p>
+              <p>hello@example.com</p>
               <p>+1 (555) 123-4567</p>
               <p>123 Pet Avenue, Dogtown, CA 90210</p>
             </div>

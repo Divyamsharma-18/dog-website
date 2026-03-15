@@ -21,7 +21,7 @@ const About = () => {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={foundersImg} alt="PawFresh founders" className="rounded-xl shadow-lg w-full" />
+              <img src={foundersImg} alt="Dog Mom’s Kitchen founders" className="rounded-xl shadow-lg w-full" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="font-display text-3xl font-bold text-foreground mb-4">Founder's Note</h2>

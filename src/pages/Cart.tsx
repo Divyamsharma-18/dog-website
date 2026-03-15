@@ -26,7 +26,7 @@ const Cart = () => {
       (item) => `• ${item.name} x${item.quantity} — $${(item.price * item.quantity).toFixed(2)}`
     );
     const message = encodeURIComponent(
-      `🐾 PawFresh Order\n\n👤 Name: ${customerName.trim()}\n📍 Address: ${address.trim()}\n\n${lines.join("\n")}\n\nTotal: $${totalPrice.toFixed(2)}`
+      `🐾 Dog Mom's Kitchen Order\n\n👤 Name: ${customerName.trim()}\n📍 Address: ${address.trim()}\n\n${lines.join("\n")}\n\nTotal: $${totalPrice.toFixed(2)}`
     );
     window.open(`https://wa.me/?text=${message}`, "_blank");
   };
