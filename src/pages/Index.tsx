@@ -51,8 +51,8 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Spacer so first viewport shows only the hero */}
-      <div className="relative z-10 h-screen" aria-hidden="true" />
+      {/* Spacer so first viewport shows only the hero (pointer-events-none so hero buttons work) */}
+      <div className="relative z-10 h-screen pointer-events-none" aria-hidden="true" />
 
       {/* Page content – slides over the fixed hero */}
       <div className="relative z-10">
