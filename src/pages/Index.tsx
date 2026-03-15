@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, Leaf, Heart, ShieldCheck, Sparkles, Cookie, Wheat, ChefHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import heroImg from "@/assets/hero-dog.jpg";
@@ -13,6 +13,17 @@ const reviews = [
   { name: "Ananya M.", rating: 5, text: "The pupcakes were a hit at my pup's birthday party! Fresh, safe, and absolutely delicious.", avatar: "A" },
   { name: "Vikram T.", rating: 4, text: "Great quality treats for training. My Golden loves the jerky strips. Will definitely reorder.", avatar: "V" },
   { name: "Sneha R.", rating: 5, text: "Switched from commercial food and the difference is incredible. Vet approved and dog loved!", avatar: "S" },
+];
+
+const highlights = [
+  { icon: Leaf, label: "100% Fresh Ingredients" },
+  { icon: ShieldCheck, label: "No Preservatives" },
+  { icon: Wheat, label: "Gluten Free Options" },
+  { icon: Sparkles, label: "No Artificial Sweeteners" },
+  { icon: Heart, label: "Vet Approved Recipes" },
+  { icon: ChefHat, label: "Made Fresh Daily" },
+  { icon: Cookie, label: "100% Homemade" },
+  { icon: Star, label: "Human Grade" },
 ];
 
 const Index = () => {
@@ -60,7 +71,7 @@ const Index = () => {
       {/* Page content – slides over the fixed hero */}
       <div className="relative z-10">
         {/* About Brand */}
-        <section className="py-20 bg-background">
+        <section className="pt-20 pb-10 bg-background">
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -70,26 +81,20 @@ const Index = () => {
               At Dog Mom’s Kitchen, we believe every dog deserves food made from real, wholesome ingredients, no fillers, no artificial preservatives. Our recipes are developed with veterinary nutritionists and sourced from trusted local farms.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {[
-              { icon: "🥩", title: "Real Ingredients", desc: "Farm-fresh proteins and vegetables in every bite" },
-              { icon: "🧪", title: "Vet Approved", desc: "Formulated with veterinary nutritionists" },
-              { icon: "🌿", title: "All Natural", desc: "No fillers, no artificial preservatives" },
-            ].map((item) => (
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto px-10 py-10">
+            {highlights.map((item) => (
               <motion.div
-                key={item.title}
+                key={item.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-card border border-border rounded-lg p-6"
-              >
-                <span className="text-4xl">{item.icon}</span>
-                <h3 className="font-display font-semibold text-foreground mt-4 mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                className="bg-card border border-border rounded-lg p-5 text-center flex flex-col items-center gap-3">
+                <item.icon className="w-8 h-8 text-primary" />
+                <span className="font-display font-semibold text-sm text-foreground">{item.label}</span>
               </motion.div>
             ))}
           </div>
-        </div>
       </section>
 
       {/* Featured Products */}
@@ -99,7 +104,7 @@ const Index = () => {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               Best Sellers
             </h2>
-            <p className="text-muted-foreground mt-2">Our most loved products by happy pups everywhere</p>
+            <p className="text-muted-foreground mt-2">Freshly made with love for your fur babies</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featured.map((product) => (
