@@ -21,8 +21,8 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoPaw} alt="PawFresh" className="w-8 h-8" />
-          <span className="font-display text-xl font-bold text-foreground">PawFresh</span>
+          <img src={logoPaw} alt="Dog Mom’s Kitchen" className="w-8 h-8" />
+          <span className="font-display text-xl font-bold text-foreground">Dog Mom’s Kitchen</span>
         </Link>
 
         {/* Desktop */}

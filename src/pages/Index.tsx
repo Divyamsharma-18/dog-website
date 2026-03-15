@@ -64,7 +64,7 @@ const Index = () => {
               Nutrition They'll <span className="text-primary">Love</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              At PawFresh, we believe every dog deserves food made from real, wholesome ingredients — no fillers, no artificial preservatives. Our recipes are developed with veterinary nutritionists and sourced from trusted local farms.
+              At Dog Mom’s Kitchen, we believe every dog deserves food made from real, wholesome ingredients — no fillers, no artificial preservatives. Our recipes are developed with veterinary nutritionists and sourced from trusted local farms.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">

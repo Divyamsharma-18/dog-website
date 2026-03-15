@@ -8,7 +8,7 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">About PawFresh</h1>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">About Dog Mom’s Kitchen</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               PawFresh was born from a simple belief: dogs deserve food that's as real and wholesome as what we eat ourselves. We're a team of pet lovers, nutritionists, and food scientists dedicated to creating premium dog food with transparent ingredients and honest sourcing.
             </p>
