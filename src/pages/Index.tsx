@@ -20,8 +20,8 @@ const Index = () => {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Fixed hero – stays at top; content scrolls over it */}
+      <section className="fixed inset-0 h-screen z-0 flex items-center justify-center overflow-hidden">
         <img
           src={heroImg}
           alt="Happy dog running in meadow"
@@ -51,8 +51,13 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* About Brand */}
-      <section className="py-20 bg-background">
+      {/* Spacer so first viewport shows only the hero */}
+      <div className="relative z-10 h-screen" aria-hidden="true" />
+
+      {/* Page content – slides over the fixed hero */}
+      <div className="relative z-10">
+        {/* About Brand */}
+        <section className="py-20 bg-background">
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -139,6 +144,7 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+      </div>
     </div>
   );
 };
