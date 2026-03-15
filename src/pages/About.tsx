@@ -10,7 +10,7 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">About Dog Mom’s Kitchen</h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              PawFresh was born from a simple belief: dogs deserve food that's as real and wholesome as what we eat ourselves. We're a team of pet lovers, nutritionists, and food scientists dedicated to creating premium dog food with transparent ingredients and honest sourcing.
+            Dog Mom's Kitchen was born from a simple belief: our dogs deserve food that's as pure, fresh, and wholesome as what we eat ourselves. Every meal is 100% homemade, made fresh daily with human-grade ingredients and zero preservatives.
             </p>
           </motion.div>
         </div>
@@ -24,12 +24,15 @@ const About = () => {
               <img src={foundersImg} alt="PawFresh founders" className="rounded-xl shadow-lg w-full" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="font-display text-3xl font-bold text-foreground mb-4">Meet the Founders</h2>
+              <h2 className="font-display text-3xl font-bold text-foreground mb-4">Founder's Note</h2>
               <p className="text-muted-foreground mb-4">
-                <strong className="text-foreground">Alex & Maria Rivera</strong> started PawFresh in 2020 after struggling to find truly healthy food for their golden retriever, Biscuit. What began as a home kitchen experiment became a mission to revolutionize dog nutrition.
+                As a dog mom myself, I always struggled to find food I could truly trust for my fur babies. Commercial dog food was full of preservatives, artificial ingredients, and fillers that I'd never want near my dogs.
+              </p>
+              <p className="text-muted-foreground mb-4">
+                So I started cooking for them, fresh, wholesome meals made from real ingredients. When I saw how much healthier and happier they became, I knew other dog parents deserved the same option.
               </p>
               <p className="text-muted-foreground">
-                With Alex's background in food science and Maria's expertise in veterinary nutrition, they built PawFresh on the principles of transparency, quality, and love for dogs.
+                That's how Dog Mom's Kitchen was born, from a mother's love for her dogs, and a commitment to serving only <strong className="text-foreground">Pure. Fresh. Gourmet.</strong> food.
               </p>
             </motion.div>
           </div>
@@ -40,19 +43,16 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-            <h2 className="font-display text-3xl font-bold text-foreground mb-6">Our Story</h2>
+            <h2 className="font-display text-3xl font-bold text-foreground mb-6">Our Promise</h2>
             <div className="text-muted-foreground text-left space-y-4 leading-relaxed">
               <p>
-                It all started with a vet visit. When Biscuit developed food sensitivities, Alex and Maria realized that most commercial dog foods were packed with fillers, by-products, and artificial additives. They couldn't find a single brand that met their standards.
+                Every single meal that leaves our kitchen is made with 100% fresh ingredients, no preservatives, no artificial sweeteners, no shortcuts. We use only human-grade ingredients that we'd eat ourselves.
               </p>
               <p>
-                So they made their own. Starting with simple recipes of real chicken, fresh vegetables, and superfoods, they cooked Biscuit's meals at home. The transformation was remarkable, shinier coat, more energy, and a happier pup.
+                All our recipes are vet approved and designed to give your dog the nutrition they need to thrive. From daily meals to festive treats and bakery goodies, everything is crafted with care and served with love.
               </p>
               <p>
-                Friends and neighbors noticed and started asking for the same meals for their dogs. Word spread, and PawFresh was born. Today, we serve thousands of happy dogs across the country with the same commitment to quality that started in our kitchen.
-              </p>
-              <p>
-                Every bag, can, and treat we sell carries our promise: real food, real ingredients, real love. Because at PawFresh, we don't just make dog food, we nourish family.
+                We believe that healthy dogs make happy families. That's why we're building a community of dog parents who care about what goes into their pet's bowl, just as much as what goes into their own plate.
               </p>
             </div>
           </motion.div>
