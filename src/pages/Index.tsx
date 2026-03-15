@@ -37,8 +37,11 @@ const Index = () => {
           <h1 className="font-display text-5xl md:text-7xl font-bold text-brand-cream mb-6">
             Real Food for <span className="text-brand-amber-light">Real Dogs</span>
           </h1>
+          <p className="text-xl md:text-2xl text-brand-warm/90 mb-2 font-display italic">
+            Pure. Fresh. Gourmet.
+          </p>
           <p className="text-lg md:text-xl text-brand-warm/90 mb-8 font-body">
-            Premium, all-natural nutrition crafted with love. Because your best friend deserves the best.
+          100% homemade, vet-approved dog food made fresh daily with love.
           </p>
           <div className="flex gap-4 justify-center">
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8">
@@ -115,7 +118,7 @@ const Index = () => {
       <section className="py-20 bg-background overflow-hidden">
         <div className="container mx-auto px-4 mb-12">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center">
-            What Our Customers Say
+          What Dog Parents Say
           </h2>
         </div>
         <div className="relative">
