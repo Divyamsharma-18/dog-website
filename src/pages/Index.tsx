@@ -8,11 +8,11 @@ import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
 
 const reviews = [
-  { name: "Sarah M.", rating: 5, text: "My golden retriever absolutely loves PawFresh! His coat has never been shinier and he has so much more energy.", avatar: "S" },
-  { name: "James K.", rating: 5, text: "Finally found a brand that uses real ingredients. My picky eater can't get enough of the chicken kibble!", avatar: "J" },
-  { name: "Linda P.", rating: 5, text: "The puppy formula helped my rescue gain healthy weight. Vet-approved and dog-loved!", avatar: "L" },
-  { name: "Mike R.", rating: 4, text: "Great quality treats for training. My lab goes crazy for the bone treats. Will definitely reorder.", avatar: "M" },
-  { name: "Emma T.", rating: 5, text: "Switched from a big brand and the difference is incredible. PawFresh is now a staple in our home.", avatar: "E" },
+  { name: "Priya S.", rating: 5, text: "My indie dog has never been healthier! Dog Mom's Kitchen meals transformed his coat and energy levels.", avatar: "P" },
+  { name: "Rahul K.", rating: 5, text: "Finally, real homemade food I can trust. My Lab goes crazy for the chicken meal. Pure quality!", avatar: "R" },
+  { name: "Ananya M.", rating: 5, text: "The pupcakes were a hit at my pup's birthday party! Fresh, safe, and absolutely delicious.", avatar: "A" },
+  { name: "Vikram T.", rating: 4, text: "Great quality treats for training. My Golden loves the jerky strips. Will definitely reorder.", avatar: "V" },
+  { name: "Sneha R.", rating: 5, text: "Switched from commercial food and the difference is incredible. Vet approved and dog loved!", avatar: "S" },
 ];
 
 const Index = () => {
@@ -118,7 +118,7 @@ const Index = () => {
       <section className="py-20 bg-background overflow-hidden">
         <div className="container mx-auto px-4 mb-12">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center">
-          What Dog Parents Say
+            What Dog Parents Say
           </h2>
         </div>
         <div className="relative">
@@ -137,7 +137,7 @@ const Index = () => {
                 </div>
                 <div className="flex justify-center gap-1 mb-3">
                   {Array.from({ length: review.rating }).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-brand-amber text-brand-amber" />
+                    <Star key={j} className="w-4 h-4 fill-brand-amber text-brand-amber" fill="#e77e23" stroke="#e77e23" />
                   ))}
                 </div>
                 <p className="text-foreground italic mb-3">"{review.text}"</p>
