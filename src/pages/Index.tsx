@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Star, Leaf, Heart, ShieldCheck, Sparkles, Cookie, Wheat, ChefHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useRef, useCallback } from "react";
 import heroImg from "@/assets/hero-dog.jpg";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
@@ -25,6 +26,77 @@ const highlights = [
   { icon: Cookie, label: "100% Homemade" },
   { icon: Star, label: "Human Grade" },
 ];
+
+const ReviewsMarquee = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStart = useRef({ x: 0, scrollLeft: 0 });
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    setIsDragging(true);
+    dragStart.current = {
+      x: e.pageX,
+      scrollLeft: scrollRef.current?.scrollLeft || 0,
+    };
+  }, []);
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const dx = e.pageX - dragStart.current.x;
+    scrollRef.current.scrollLeft = dragStart.current.scrollLeft - dx;
+  }, [isDragging]);
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+  const handleCardClick = useCallback(() => {
+    if (!isDragging) setIsPaused((p) => !p);
+  }, [isDragging]);
+  return (
+    <section className="py-20 bg-background overflow-hidden">
+      <div className="container mx-auto px-4 mb-12">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center">
+          What Dog Parents Say
+        </h2>
+        <p className="text-center text-muted-foreground text-sm mt-2">
+          {isPaused ? "▶ Click any card to resume" : "⏸ Click any card to pause · Drag to scroll"}
+        </p>
+      </div>
+      <div
+        ref={scrollRef}
+        className="relative overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing select-none"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        <div
+          className={`flex gap-6 w-max px-4 ${isPaused || isDragging ? "" : "animate-marquee"}`}
+          style={isPaused || isDragging ? { animationPlayState: "paused" } : undefined}
+        >
+          {[...reviews, ...reviews, ...reviews].map((review, i) => (
+            <div
+              key={i}
+              onClick={handleCardClick}
+              className="flex-shrink-0 w-[340px] bg-card border border-border rounded-xl p-6 text-center transition-transform duration-200 hover:scale-[1.03]"
+            >
+              <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display text-lg font-bold mx-auto mb-3">
+                {review.avatar}
+              </div>
+              <div className="flex justify-center gap-1 mb-3">
+              {Array.from({ length: review.rating }).map((_, j) => (
+                    <Star key={j} className="w-4 h-4 fill-brand-amber text-brand-amber" fill="#e77e23" stroke="#e77e23" />
+                  ))}
+              </div>
+              <p className="text-foreground italic mb-3">"{review.text}"</p>
+              <p className="font-display font-semibold text-muted-foreground text-sm">{review.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Index = () => {
   const featured = products.slice(0, 4);
@@ -120,38 +192,7 @@ const Index = () => {
       </section>
 
       {/* Reviews Marquee */}
-      <section className="py-20 bg-background overflow-hidden">
-        <div className="container mx-auto px-4 mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center">
-            What Dog Parents Say
-          </h2>
-        </div>
-        <div className="relative">
-          <motion.div
-            className="flex gap-6"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ x: { repeat: Infinity, repeatType: "loop", duration: 25, ease: "linear" } }}
-          >
-            {[...reviews, ...reviews].map((review, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-[340px] bg-card border border-border rounded-xl p-6 text-center"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display text-lg font-bold mx-auto mb-3">
-                  {review.avatar}
-                </div>
-                <div className="flex justify-center gap-1 mb-3">
-                  {Array.from({ length: review.rating }).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-brand-amber text-brand-amber" fill="#e77e23" stroke="#e77e23" />
-                  ))}
-                </div>
-                <p className="text-foreground italic mb-3">"{review.text}"</p>
-                <p className="font-display font-semibold text-muted-foreground text-sm">{review.name}</p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      <ReviewsMarquee />
       </div>
     </div>
   );
