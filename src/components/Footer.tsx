@@ -2,6 +2,15 @@ import { Link } from "react-router-dom";
 import logoPaw from "@/assets/logo-paw.png";
 
 const Footer = () => {
+  const handlePolicyNavClick = (to: string) => {
+    fetch('http://127.0.0.1:7414/ingest/5e461ad2-faa9-4f88-9c19-69b462b84355',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'d15f27'},body:JSON.stringify({sessionId:'d15f27',runId:'pre-fix',hypothesisId:'H1',location:'src/components/Footer.tsx:7',message:'Footer policy link clicked',data:{to,scrollY:typeof window!=='undefined'?window.scrollY:null},timestamp:Date.now()})}).catch(()=>{});
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+
+    fetch('http://127.0.0.1:7414/ingest/5e461ad2-faa9-4f88-9c19-69b462b84355',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'d15f27'},body:JSON.stringify({sessionId:'d15f27',runId:'pre-fix',hypothesisId:'H1',location:'src/components/Footer.tsx:15',message:'Footer policy scrollTo invoked',data:{to,scrollY:typeof window!=='undefined'?window.scrollY:null},timestamp:Date.now()})}).catch(()=>{});
+  };
+
   return (
     <footer className="relative z-20 bg-white text-foreground border-t border-border">
       <div className="container mx-auto px-4 py-12">
@@ -33,10 +42,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4">Policies</h4>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <Link to="/refund-policy" className="hover:opacity-100 transition-opacity">Refund Policy</Link>
-              <Link to="/terms" className="hover:opacity-100 transition-opacity">Terms & Conditions</Link>
-              <Link to="/shipping-policy" className="hover:opacity-100 transition-opacity">Shipping Policy</Link>
-              <Link to="/privacy-policy" className="hover:opacity-100 transition-opacity">Privacy Policy</Link>
+              <Link to="/refund-policy" onClick={() => handlePolicyNavClick("/refund-policy")} className="hover:opacity-100 transition-opacity">Refund Policy</Link>
+              <Link to="/terms" onClick={() => handlePolicyNavClick("/terms")} className="hover:opacity-100 transition-opacity">Terms & Conditions</Link>
+              <Link to="/shipping-policy" onClick={() => handlePolicyNavClick("/shipping-policy")} className="hover:opacity-100 transition-opacity">Shipping Policy</Link>
+              <Link to="/privacy-policy" onClick={() => handlePolicyNavClick("/privacy-policy")} className="hover:opacity-100 transition-opacity">Privacy Policy</Link>
             </div>
           </div>
 
