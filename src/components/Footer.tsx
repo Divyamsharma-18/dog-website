@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
+        <div className="border-t border-border mt-2 -mb-4 pt-8 text-center text-sm text-muted-foreground">
           © {new Date().getFullYear()} Dog Mom’s Kitchen. All rights reserved.
         </div>
       </div>
