@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={logoPaw} alt="Dog Mom’s Kitchen" className="w-8 h-8" />
+              <img src={logoPaw} alt="Dog Mom’s Kitchen" className="hidden sm:block w-8 h-8" />
               <span className="font-display text-xl font-bold">Dog Mom’s Kitchen</span>
             </div>
             <p className="text-sm text-muted-foreground">
