@@ -19,8 +19,8 @@ const Contact = () => {
     <div className="py-20 bg-background">
       <div className="container mx-auto px-4 max-w-2xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground">Contact Us</h1>
-          <p className="text-muted-foreground mt-3">We'd love to hear from you and your furry friend!</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-[#1c2840]">Contact Us</h1>
+          <p className="text-[#1c2840] mt-3">We'd love to hear from you and your furry friend!</p>
         </motion.div>
 
         {/* Social Links */}
@@ -33,7 +33,7 @@ const Contact = () => {
             <a
               key={social.label}
               href={social.href}
-              className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-[#1c2840] hover:bg-primary hover:text-primary-foreground transition-colors"
               aria-label={social.label}
             >
               <social.icon className="w-5 h-5" />
@@ -44,7 +44,7 @@ const Contact = () => {
         {/* Contact Form */}
         <form onSubmit={handleSubmit} className="space-y-4 bg-card border border-border rounded-xl p-8">
           <div>
-            <label className="text-sm font-medium text-foreground mb-1 block">Name</label>
+            <label className="text-sm font-medium text-[#1c2840] mb-1 block">Name</label>
             <Input
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -53,7 +53,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="text-sm font-medium text-foreground mb-1 block">Email</label>
+            <label className="text-sm font-medium text-[#1c2840] mb-1 block">Email</label>
             <Input
               type="email"
               value={form.email}
@@ -63,7 +63,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="text-sm font-medium text-foreground mb-1 block">Message</label>
+            <label className="text-sm font-medium text-[#1c2840] mb-1 block">Message</label>
             <Textarea
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -73,10 +73,10 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="text-sm font-medium text-foreground mb-1 block">Upload Image (optional)</label>
+            <label className="text-sm font-medium text-[#1c2840] mb-1 block">Upload Image (optional)</label>
             <Input type="file" accept="image/*" />
           </div>
-          <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button type="submit" className="w-full bg-primary text-[#1c2840] hover:bg-primary/90">
             Send Message
           </Button>
         </form>
