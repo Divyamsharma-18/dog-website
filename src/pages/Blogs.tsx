@@ -13,7 +13,7 @@ const BLOG_POSTS = [
     slug: "understanding-nutritional-needs"
   },
   {
-    id: 1,
+    id: 2,
     title: "The Best Toys for Heavy Chewers",
     excerpt: "Tired of toys getting destroyed in minutes? Here is our curated list of the best durable toys for heavy chewers.",
     date: "Dec 18, 2023",
