@@ -32,7 +32,7 @@ const Blogs = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-[#1c2840] mb-6"
           >
             Dog Mom's Kitchen Blog
           </motion.h1>
@@ -40,7 +40,7 @@ const Blogs = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-muted-foreground"
+            className="text-lg text-[#1c2840]"
           >
             Tips, recipes, and stories for every devoted dog parent.
           </motion.p>
@@ -68,7 +68,7 @@ const Blogs = () => {
                   />
                 </Link>
                 <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-4 text-sm text-[#8b8c8d] mb-4">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       {post.date}
@@ -79,11 +79,11 @@ const Blogs = () => {
                     </span>
                   </div>
                   <Link to={`/blogs/${post.slug}`}>
-                    <h2 className="text-2xl font-bold font-display text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h2 className="text-2xl font-bold font-display text-[#1c2840] mb-3 group-hover:text-primary transition-colors">
                       {post.title}
                     </h2>
                   </Link>
-                  <p className="text-muted-foreground mb-6 flex-grow">
+                  <p className="text-[#8b8c8d] mb-6 flex-grow">
                     {post.excerpt}
                   </p>
                   <Link
