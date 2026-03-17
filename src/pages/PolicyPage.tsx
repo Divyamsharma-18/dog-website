@@ -52,9 +52,7 @@ const PolicyPage = () => {
   const policy = policies[slug || ""];
 
   useEffect(() => {
-    // #region agent log
     fetch('http://127.0.0.1:7414/ingest/5e461ad2-faa9-4f88-9c19-69b462b84355',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'d15f27'},body:JSON.stringify({sessionId:'d15f27',runId:'pre-fix',hypothesisId:'H2',location:'src/pages/PolicyPage.tsx:55',message:'PolicyPage mounted/slug changed',data:{slug,scrollY:typeof window!=='undefined'?window.scrollY:null},timestamp:Date.now()})}).catch(()=>{});
-    // #endregion
   }, [slug]);
 
   if (!policy) {
@@ -66,7 +64,7 @@ const PolicyPage = () => {
   }
 
   return (
-    <div className="py-20 bg-background">
+    <div className="mt-20 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="font-display text-4xl font-bold text-foreground mb-8">{policy.title}</h1>
