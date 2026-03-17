@@ -22,17 +22,17 @@ const FAQ = () => {
     <div className="py-20 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground">Frequently Asked Questions</h1>
-          <p className="text-muted-foreground mt-3">Got questions? We've got answers for every dog parent.</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-[#1c2840]">Frequently Asked Questions</h1>
+          <p className="text-[#8b8c8d] mt-3">Got questions? We've got answers for every dog parent.</p>
         </motion.div>
 
         <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`} className="bg-card border border-border rounded-lg px-6">
-              <AccordionTrigger className="font-display font-semibold text-foreground text-left">
+              <AccordionTrigger className="font-display font-semibold text-[#1c2840] text-left">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-[#8b8c8d]">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>
