@@ -31,10 +31,10 @@ const ProductCard = ({ product }: { product: Product }) => {
       </div>
       <div className="p-4">
         <span className="text-xs font-medium text-primary">{product.category}</span>
-        <h3 className="font-display font-semibold text-foreground mt-1">{product.name}</h3>
+        <h3 className="font-display font-semibold text-[#1c2840] mt-1">{product.name}</h3>
         <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{product.description}</p>
         <div className="flex items-center justify-between mt-4">
-          <span className="text-lg font-bold text-foreground">${product.price.toFixed(2)}</span>
+          <span className="text-lg font-bold text-[#1c2840]">${product.price.toFixed(2)}</span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setQuantity(Math.max(1, quantity - 1))}
