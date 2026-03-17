@@ -43,7 +43,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <Link to="/cart" className="relative">
-            <ShoppingCart className="w-5 h-5 text-foreground" />
+            <ShoppingCart className="w-5 h-5 text-[#1c2840]" />
             {totalItems > 0 && (
               <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
                 {totalItems}
