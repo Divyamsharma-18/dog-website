@@ -4,7 +4,7 @@ import { Star, Leaf, Heart, ShieldCheck, Sparkles, Cookie, Wheat, ChefHat } from
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useRef, useCallback } from "react";
-import heroImg from "@/assets/hero-dog.jpg";
+import heroImg from "@/assets/hero-dog.jpeg";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
 
@@ -114,10 +114,10 @@ const Index = () => {
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center px-4 max-w-3xl"
         >
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-brand-cream mb-6">
-            Real Food for <span className="text-brand-amber-light">Real Dogs</span>
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6">
+            Real Food for <span className="text-black">Real Dogs</span>
           </h1>
-          <p className="text-xl md:text-2xl text-brand-warm/90 mb-2 font-display italic">
+          <p className="text-xl md:text-2xl text-white mb-2 font-display italic">
             Pure. Fresh. Gourmet.
           </p>
           <p className="text-lg md:text-xl text-brand-warm/90 mb-8 font-body">
