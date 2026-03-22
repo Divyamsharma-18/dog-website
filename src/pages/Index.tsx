@@ -4,7 +4,7 @@ import { Star, Leaf, Heart, ShieldCheck, Sparkles, Cookie, Wheat, ChefHat } from
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useRef, useCallback } from "react";
-import heroImg from "@/assets/hero-dog.jpeg";
+import heroImg from "@/assets/hero-dog.webp";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
 
