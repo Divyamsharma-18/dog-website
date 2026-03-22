@@ -22,15 +22,24 @@ interface CartContextType {
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
+  showPincodeModal: boolean;
+  setShowPincodeModal: (show: boolean) => void;
+  hasCheckedPincode: boolean;
+  setHasCheckedPincode: (checked: boolean) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [showPincodeModal, setShowPincodeModal] = useState(false);
+  const [hasCheckedPincode, setHasCheckedPincode] = useState(false);
 
   const addToCart = useCallback((product: Product, quantity = 1) => {
     setItems((prev) => {
+      if (prev.length === 0 && !hasCheckedPincode) {
+        setShowPincodeModal(true);
+      }
       const existing = prev.find((i) => i.id === product.id);
       if (existing) {
         return prev.map((i) =>
@@ -39,7 +48,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
       return [...prev, { ...product, quantity }];
     });
-  }, []);
+  }, [hasCheckedPincode]);
 
   const removeFromCart = useCallback((productId: number) => {
     setItems((prev) => prev.filter((i) => i.id !== productId));
@@ -62,7 +71,19 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   return (
     <CartContext.Provider
-      value={{ items, addToCart, removeFromCart, updateQuantity, clearCart, totalItems, totalPrice }}
+      value={{
+        items,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        clearCart,
+        totalItems,
+        totalPrice,
+        showPincodeModal,
+        setShowPincodeModal,
+        hasCheckedPincode,
+        setHasCheckedPincode,
+      }}
     >
       {children}
     </CartContext.Provider>

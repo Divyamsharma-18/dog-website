@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/lib/cart-context";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PincodeModal from "@/components/PincodeModal";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
@@ -41,6 +42,7 @@ const App = () => (
           </main>
           <Footer />
         </BrowserRouter>
+        <PincodeModal />
       </CartProvider>
     </TooltipProvider>
   </QueryClientProvider>
