@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from "react";
+import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 
 export interface Product {
   id: number;
@@ -31,9 +31,30 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [items, setItems] = useState<CartItem[]>(() => {
+    try {
+      const stored = localStorage.getItem("cart_items");
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
   const [showPincodeModal, setShowPincodeModal] = useState(false);
-  const [hasCheckedPincode, setHasCheckedPincode] = useState(false);
+  const [hasCheckedPincode, setHasCheckedPincode] = useState(() => {
+    try {
+      return localStorage.getItem("cart_pincode_checked") === "true";
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart_items", JSON.stringify(items));
+  }, [items]);
+
+  useEffect(() => {
+    localStorage.setItem("cart_pincode_checked", String(hasCheckedPincode));
+  }, [hasCheckedPincode]);
 
   const addToCart = useCallback((product: Product, quantity = 1) => {
     setItems((prev) => {
