@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useRef, useCallback } from "react";
 import heroImg from "@/assets/hero-dog.webp";
+import heroImg2 from "@/assets/hero-mobile.jpeg";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
 
@@ -103,9 +104,14 @@ const Index = () => {
       {/* Fixed hero – stays at top; content scrolls over it */}
       <section className="fixed inset-0 h-screen z-0 flex items-center justify-center overflow-hidden">
         <img
+          src={heroImg2}
+          alt="Happy dog running in meadow"
+          className="absolute inset-0 w-full h-full object-cover md:hidden"
+        />
+        <img
           src={heroImg}
           alt="Happy dog running in meadow"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-brown/60 via-brand-brown/40 to-brand-brown/70" />
         <motion.div
