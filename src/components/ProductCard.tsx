@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 const ProductCard = ({ product }: { product: Product }) => {
   const [quantity, setQuantity] = useState(1);
+  const [isMobileFlipped, setIsMobileFlipped] = useState(false);
   const { addToCart } = useCart();
 
   const handleAdd = () => {
@@ -22,8 +23,11 @@ const ProductCard = ({ product }: { product: Product }) => {
       viewport={{ once: true }}
       className="bg-card rounded-lg border border-border overflow-hidden group hover:shadow-lg transition-shadow"
     >
-      <div className="aspect-square relative group/image [perspective:2000px] bg-[#1c2840] rounded-t-lg">
-        <div className="relative w-full h-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover/image:[transform:rotateY(180deg)]">
+      <div 
+        className="aspect-square relative group/image [perspective:2000px] bg-[#1c2840] rounded-t-lg cursor-pointer md:cursor-default"
+        onClick={() => setIsMobileFlipped(!isMobileFlipped)}
+      >
+        <div className={`relative w-full h-full transition-transform duration-500 ease-out [transform-style:preserve-3d] md:group-hover/image:[transform:rotateY(180deg)] ${isMobileFlipped ? '[transform:rotateY(180deg)]' : ''}`}>
           {/* Front */}
           <div className="absolute inset-0 [backface-visibility:hidden] bg-white">
             <img
