@@ -99,21 +99,102 @@ export const products: Product[] = [
   },
 
   // --- EXISTING NON-MEAL PRODUCTS ---
+  // --- NEW BAKERY MENU ---
   {
     id: 8,
-    name: "Peanut Butter Pupcakes",
-    description: "Gluten-free pupcakes made with oat flour, peanut butter, and banana. A gourmet treat your dog will love!",
-    price: 199,
+    name: "Pumpkin Apple Cake",
+    description: "A moist, delicious dog-safe cake perfect for fall, rich in vitamins and fiber.",
+    price: 349,
     category: "Bakery",
     image: product2,
     nutrition: [
-      { label: "Crude Protein", value: "10%" },
-      { label: "Crude Fat", value: "12%" },
-      { label: "Moisture", value: "Max 15%" }
+      { label: "Protein", value: "8%" },
+      { label: "Fat", value: "6%" },
+      { label: "Fiber", value: "Max 5%" }
     ]
   },
   {
     id: 9,
+    name: "Oat Banana Berry Cake",
+    description: "Loaded with fresh berries and oats. Packed with antioxidants for a healthy immune system.",
+    price: 399,
+    category: "Bakery",
+    image: product4,
+    nutrition: [
+      { label: "Protein", value: "9%" },
+      { label: "Fat", value: "7%" },
+      { label: "Fiber", value: "Max 4%" }
+    ]
+  },
+  {
+    id: 10,
+    name: "Carob Chocolate Cake",
+    description: "100% dog-safe carob! Gives them the chocolate experience without any of the toxins.",
+    price: 449,
+    category: "Bakery",
+    image: product2,
+    nutrition: [
+      { label: "Protein", value: "10%" },
+      { label: "Fat", value: "8%" },
+      { label: "Fiber", value: "Max 3%" }
+    ]
+  },
+  {
+    id: 11,
+    name: "Classic Peanut Butter Banana Cake",
+    description: "The all-time favorite. Thick peanut butter frosting over a banana sponge cake.",
+    price: 399,
+    category: "Bakery",
+    image: product4,
+    nutrition: [
+      { label: "Protein", value: "12%" },
+      { label: "Fat", value: "14%" },
+      { label: "Fiber", value: "Max 3%" }
+    ]
+  },
+  {
+    id: 12,
+    name: "Chicken Peanut Butter Cake",
+    description: "A unique savory-sweet combo! Packed with real chicken protein and a peanut butter glaze.",
+    price: 499,
+    category: "Bakery",
+    image: product2,
+    nutrition: [
+      { label: "Protein", value: "18%" },
+      { label: "Fat", value: "12%" },
+      { label: "Fiber", value: "Max 2%" }
+    ]
+  },
+  {
+    id: 13,
+    name: "Pumpkin Carrot Cake",
+    description: "Baked with fresh carrots and pumpkin puree. High in beta-carotene for healthy eyes and coats.",
+    price: 349,
+    category: "Bakery",
+    image: product4,
+    nutrition: [
+      { label: "Protein", value: "7%" },
+      { label: "Fat", value: "5%" },
+      { label: "Fiber", value: "Max 6%" }
+    ]
+  },
+  {
+    id: 14,
+    name: "Summer Delight Mango Cake",
+    description: "A tropical, seasonal favorite! Made with real ripe mangoes to cool your pup down.",
+    price: 449,
+    category: "Bakery",
+    image: product2,
+    nutrition: [
+      { label: "Protein", value: "6%" },
+      { label: "Fat", value: "4%" },
+      { label: "Fiber", value: "Max 3%" }
+    ]
+  },
+
+  // --- OTHER TREATS & MUNCHIES ---
+  {
+    id: 15,
     name: "Birthday Bark Cake",
     description: "Celebrate your fur baby's special day! Made with carrot, apple, and yogurt frosting. No artificial sweeteners.",
     price: 499,
@@ -126,7 +207,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 10,
+    id: 16,
     name: "Chicken Jerky Strips",
     description: "Dehydrated chicken breast strips — single ingredient, no additives. The perfect healthy training treat.",
     price: 249,
@@ -139,7 +220,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 11,
+    id: 17,
     name: "Crunchy Carrot Cookies",
     description: "Baked with fresh carrots, oats, and a hint of cinnamon. Gluten-free and crunchy goodness.",
     price: 149,
@@ -152,7 +233,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 12,
+    id: 18,
     name: "Festive Cookie Box",
     description: "Assorted festive-shaped cookies in a gift box. Made fresh for holidays with love and zero preservatives.",
     price: 349,
@@ -163,7 +244,7 @@ export const products: Product[] = [
       { label: "Fat", value: "9%" },
       { label: "Fiber", value: "Max 2.5%" }
     ]
-  },
+  }
 ];
 
 export const categories = ["All", "Meals", "Bakery", "Festive Treats", "Treats", "Munchies"];
