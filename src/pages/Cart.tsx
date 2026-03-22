@@ -15,9 +15,11 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 const Cart = () => {
-  const { items, updateQuantity, removeFromCart, totalPrice, totalItems } = useCart();
+  const { items, updateQuantity, removeFromCart, totalPrice, totalItems, verifiedPincode } = useCart();
   const [customerName, setCustomerName] = useState("");
   const [address, setAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
 
   const handleWhatsAppOrder = () => {
     if (!customerName.trim()) {
@@ -28,11 +30,19 @@ const Cart = () => {
       toast.error("Please enter your delivery address");
       return;
     }
+    if (!phoneNumber.trim()) {
+      toast.error("Please enter your phone number");
+      return;
+    }
+    if (!emailAddress.trim()) {
+      toast.error("Please enter your email address");
+      return;
+    }
     const lines = items.map(
       (item) => `• ${item.name} x${item.quantity} — $${(item.price * item.quantity).toFixed(2)}`
     );
     const message = encodeURIComponent(
-      `🐾 Dog Mom's Kitchen Order\n\n👤 Name: ${customerName.trim()}\n📍 Address: ${address.trim()}\n\n${lines.join("\n")}\n\nTotal: $${totalPrice.toFixed(2)}`
+      `🐾 Dog Mom's Kitchen Order\n\n👤 Name: ${customerName.trim()}\n📞 Phone: ${phoneNumber.trim()}\n✉️ Email: ${emailAddress.trim()}\n📍 Address: ${address.trim()}\n📮 Pincode: ${verifiedPincode}\n\n${lines.join("\n")}\n\nTotal: $${totalPrice.toFixed(2)}`
     );
     window.open(`https://wa.me/?text=${message}`, "_blank");
   };
@@ -123,6 +133,40 @@ const Cart = () => {
               maxLength={500}
               rows={3}
             />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="text-sm text-muted-foreground mb-1 block">Phone Number</label>
+              <Input
+                type="tel"
+                placeholder="Enter your phone number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                maxLength={20}
+              />
+            </div>
+            <div>
+              <label className="text-sm text-muted-foreground mb-1 block">Email Address</label>
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                value={emailAddress}
+                onChange={(e) => setEmailAddress(e.target.value)}
+                maxLength={100}
+              />
+            </div>
+          </div>
+          <div>
+            <label className="text-sm text-muted-foreground mb-1 block">Delivery Pincode</label>
+            <Input
+              value={verifiedPincode || "Not provided"}
+              readOnly
+              disabled
+              className="bg-muted text-muted-foreground cursor-not-allowed"
+            />
+            <p className="text-xs text-muted-foreground mt-1">
+              Auto-filled from your delivery availability check.
+            </p>
           </div>
         </div>
 

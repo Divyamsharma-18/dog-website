@@ -15,7 +15,7 @@ const validPincodes = [
 ];
 
 const PincodeModal = () => {
-  const { showPincodeModal, setShowPincodeModal, setHasCheckedPincode } = useCart();
+  const { showPincodeModal, setShowPincodeModal, setHasCheckedPincode, setVerifiedPincode } = useCart();
   const [pincode, setPincode] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
@@ -31,6 +31,7 @@ const PincodeModal = () => {
       setSuccess(true);
       setError("");
       setHasCheckedPincode(true);
+      setVerifiedPincode(pincode.trim());
       
       // Auto-close after showing the success message in the popup
       setTimeout(() => {

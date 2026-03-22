@@ -26,6 +26,8 @@ interface CartContextType {
   setShowPincodeModal: (show: boolean) => void;
   hasCheckedPincode: boolean;
   setHasCheckedPincode: (checked: boolean) => void;
+  verifiedPincode: string;
+  setVerifiedPincode: (pin: string) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -47,6 +49,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       return false;
     }
   });
+  const [verifiedPincode, setVerifiedPincode] = useState(() => {
+    try {
+      return localStorage.getItem("cart_verified_pincode") || "";
+    } catch {
+      return "";
+    }
+  });
 
   useEffect(() => {
     localStorage.setItem("cart_items", JSON.stringify(items));
@@ -55,6 +64,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     localStorage.setItem("cart_pincode_checked", String(hasCheckedPincode));
   }, [hasCheckedPincode]);
+
+  useEffect(() => {
+    localStorage.setItem("cart_verified_pincode", verifiedPincode);
+  }, [verifiedPincode]);
 
   const addToCart = useCallback((product: Product, quantity = 1) => {
     setItems((prev) => {
@@ -104,6 +117,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setShowPincodeModal,
         hasCheckedPincode,
         setHasCheckedPincode,
+        verifiedPincode,
+        setVerifiedPincode,
       }}
     >
       {children}
