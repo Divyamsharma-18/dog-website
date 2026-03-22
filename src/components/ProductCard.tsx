@@ -22,10 +22,10 @@ const ProductCard = ({ product }: { product: Product }) => {
       viewport={{ once: true }}
       className="bg-card rounded-lg border border-border overflow-hidden group hover:shadow-lg transition-shadow"
     >
-      <div className="aspect-square relative group/image [perspective:2000px]">
-        <div className="relative w-full h-full transition-transform duration-1000 ease-[cubic-bezier(0.45,0,0.15,1)] [transform-style:preserve-3d] group-hover/image:[transform:rotateY(180deg)]">
+      <div className="aspect-square relative group/image [perspective:2000px] bg-[#1c2840] rounded-t-lg">
+        <div className="relative w-full h-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover/image:[transform:rotateY(180deg)]">
           {/* Front */}
-          <div className="absolute inset-0 [backface-visibility:hidden]">
+          <div className="absolute inset-0 [backface-visibility:hidden] bg-white">
             <img
               src={product.image}
               alt={product.name}
