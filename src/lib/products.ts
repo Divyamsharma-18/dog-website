@@ -193,21 +193,102 @@ export const products: Product[] = [
   },
 
   // --- OTHER TREATS & MUNCHIES ---
+  // --- FESTIVE TREATS ---
   {
     id: 15,
-    name: "Birthday Bark Cake",
-    description: "Celebrate your fur baby's special day! Made with carrot, apple, and yogurt frosting. No artificial sweeteners.",
-    price: 499,
+    name: "Assorted Dog-Safe Gujiya",
+    description: "A festive classic reimagined! Baked to perfection with safe, dog-friendly unsweetened fillings in all available variants.",
+    price: 349,
     category: "Festive Treats",
     image: product4,
     nutrition: [
       { label: "Protein", value: "8%" },
-      { label: "Fat", value: "10%" },
-      { label: "Fiber", value: "Max 3%" }
+      { label: "Fat", value: "6%" },
+      { label: "Fiber", value: "Max 4%" }
     ]
   },
   {
     id: 16,
+    name: "Vegetarian Samosa",
+    description: "Crispy baked crust filled with mashed pumpkin and peas. A delightful festive snack.",
+    price: 199,
+    category: "Festive Treats",
+    image: product2,
+    nutrition: [
+      { label: "Protein", value: "6%" },
+      { label: "Fat", value: "5%" },
+      { label: "Fiber", value: "Max 5%" }
+    ]
+  },
+  {
+    id: 17,
+    name: "Chicken Samosa",
+    description: "Minced chicken breast folded into a dog-friendly baked pastry crust.",
+    price: 249,
+    category: "Festive Treats",
+    image: product4,
+    nutrition: [
+      { label: "Protein", value: "15%" },
+      { label: "Fat", value: "8%" },
+      { label: "Fiber", value: "Max 2%" }
+    ]
+  },
+  {
+    id: 18,
+    name: "Paneer Samosa",
+    description: "Fresh paneer and mild dog-safe herbs inside a perfectly baked pocket.",
+    price: 229,
+    category: "Festive Treats",
+    image: product2,
+    nutrition: [
+      { label: "Protein", value: "12%" },
+      { label: "Fat", value: "10%" },
+      { label: "Fiber", value: "Max 2%" }
+    ]
+  },
+  {
+    id: 19,
+    name: "Besan Laddu (Dog-Safe)",
+    description: "Roasted chickpea flour laced with dog-friendly oils and completely sugar-free.",
+    price: 299,
+    category: "Festive Treats",
+    image: product4,
+    nutrition: [
+      { label: "Protein", value: "10%" },
+      { label: "Fat", value: "12%" },
+      { label: "Fiber", value: "Max 3%" }
+    ]
+  },
+  {
+    id: 20,
+    name: "Coconut Laddu",
+    description: "Soft, chewy balls made with unsweetened desiccated coconut and oats.",
+    price: 299,
+    category: "Festive Treats",
+    image: product2,
+    nutrition: [
+      { label: "Protein", value: "6%" },
+      { label: "Fat", value: "14%" },
+      { label: "Fiber", value: "Max 5%" }
+    ]
+  },
+  {
+    id: 21,
+    name: "Ragi Laddu",
+    description: "High-calcium finger millet ladoos. Excellent for joint health and absolutely delicious.",
+    price: 299,
+    category: "Festive Treats",
+    image: product4,
+    nutrition: [
+      { label: "Protein", value: "8%" },
+      { label: "Fat", value: "4%" },
+      { label: "Fiber", value: "Max 6%" }
+    ]
+  },
+
+  // --- OTHER TREATS & MUNCHIES ---
+  {
+    id: 22,
     name: "Chicken Jerky Strips",
     description: "Dehydrated chicken breast strips — single ingredient, no additives. The perfect healthy training treat.",
     price: 249,
@@ -220,7 +301,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 17,
+    id: 23,
     name: "Crunchy Carrot Cookies",
     description: "Baked with fresh carrots, oats, and a hint of cinnamon. Gluten-free and crunchy goodness.",
     price: 149,
@@ -230,19 +311,6 @@ export const products: Product[] = [
       { label: "Protein", value: "9%" },
       { label: "Fat", value: "7%" },
       { label: "Fiber", value: "Max 4%" }
-    ]
-  },
-  {
-    id: 18,
-    name: "Festive Cookie Box",
-    description: "Assorted festive-shaped cookies in a gift box. Made fresh for holidays with love and zero preservatives.",
-    price: 349,
-    category: "Festive Treats",
-    image: product4,
-    nutrition: [
-      { label: "Protein", value: "8%" },
-      { label: "Fat", value: "9%" },
-      { label: "Fiber", value: "Max 2.5%" }
     ]
   }
 ];
