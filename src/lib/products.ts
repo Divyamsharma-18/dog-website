@@ -73,7 +73,7 @@ export const products: Product[] = [
   },
   {
     id: 6,
-    name: "Balanced Bowl (Vegetarian)",
+    name: "Balanced Bowl (Vegetarian – Paneer / Soya option)",
     description: "A perfectly balanced vegetarian meal with lentils, pumpkin, green beans, and rice.",
     price: 249,
     category: "Meals",
@@ -86,7 +86,7 @@ export const products: Product[] = [
   },
   {
     id: 7,
-    name: "Balanced Bowl (Non-Vegetarian)",
+    name: "Balanced Bowl (Non-Vegetarian – Chicken / Fish option)",
     description: "A balanced mix of chicken, organ meat, sweet potato, and peas for complete nutrition.",
     price: 349,
     category: "Meals",
@@ -196,8 +196,8 @@ export const products: Product[] = [
   // --- FESTIVE TREATS ---
   {
     id: 15,
-    name: "Assorted Dog-Safe Gujiya",
-    description: "A festive classic reimagined! Baked to perfection with safe, dog-friendly unsweetened fillings in all available variants.",
+    name: "Classic Gujiya",
+    description: "A festive classic reimagined! Baked to perfection with safe, dog-friendly unsweetened fillings.",
     price: 349,
     category: "Festive Treats",
     image: product4,
@@ -209,7 +209,33 @@ export const products: Product[] = [
   },
   {
     id: 16,
-    name: "Vegetarian Samosa",
+    name: "Pumpkin Gujiya",
+    description: "A healthy twist filled with delicious pumpkin puree, safe and naturally sweet.",
+    price: 349,
+    category: "Festive Treats",
+    image: product2,
+    nutrition: [
+      { label: "Protein", value: "7%" },
+      { label: "Fat", value: "5%" },
+      { label: "Fiber", value: "Max 5%" }
+    ]
+  },
+  {
+    id: 17,
+    name: "Beetroot Gujiya",
+    description: "Infused with beetroot for a vibrant pink hue and packed with antioxidants.",
+    price: 349,
+    category: "Festive Treats",
+    image: product4,
+    nutrition: [
+      { label: "Protein", value: "7%" },
+      { label: "Fat", value: "4%" },
+      { label: "Fiber", value: "Max 6%" }
+    ]
+  },
+  {
+    id: 18,
+    name: "Veggie Samosa",
     description: "Crispy baked crust filled with mashed pumpkin and peas. A delightful festive snack.",
     price: 199,
     category: "Festive Treats",
@@ -221,7 +247,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 17,
+    id: 19,
     name: "Chicken Samosa",
     description: "Minced chicken breast folded into a dog-friendly baked pastry crust.",
     price: 249,
@@ -234,7 +260,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 18,
+    id: 20,
     name: "Paneer Samosa",
     description: "Fresh paneer and mild dog-safe herbs inside a perfectly baked pocket.",
     price: 229,
@@ -247,8 +273,8 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 19,
-    name: "Besan Laddu (Dog-Safe)",
+    id: 21,
+    name: "Besan Laddu",
     description: "Roasted chickpea flour laced with dog-friendly oils and completely sugar-free.",
     price: 299,
     category: "Festive Treats",
@@ -260,7 +286,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 20,
+    id: 22,
     name: "Coconut Laddu",
     description: "Soft, chewy balls made with unsweetened desiccated coconut and oats.",
     price: 299,
@@ -273,7 +299,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 21,
+    id: 23,
     name: "Ragi Laddu",
     description: "High-calcium finger millet ladoos. Excellent for joint health and absolutely delicious.",
     price: 299,
@@ -288,7 +314,7 @@ export const products: Product[] = [
 
   // --- OTHER TREATS & MUNCHIES ---
   {
-    id: 22,
+    id: 24,
     name: "Chicken Jerky Strips",
     description: "Dehydrated chicken breast strips — single ingredient, no additives. The perfect healthy training treat.",
     price: 249,
@@ -301,7 +327,7 @@ export const products: Product[] = [
     ]
   },
   {
-    id: 23,
+    id: 25,
     name: "Crunchy Carrot Cookies",
     description: "Baked with fresh carrots, oats, and a hint of cinnamon. Gluten-free and crunchy goodness.",
     price: 149,
