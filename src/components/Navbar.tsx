@@ -28,8 +28,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isHome = location.pathname === "/";
+  const navClasses = isHome
+    ? `fixed top-0 w-full z-50 bg-card/90 backdrop-blur-md border-b border-border transition-all duration-300 ${isScrolled ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`
+    : "sticky top-0 w-full z-50 bg-card/90 backdrop-blur-md border-b border-border";
+
   return (
-    <nav className={`fixed top-0 w-full z-50 bg-card/90 backdrop-blur-md border-b border-border transition-all duration-300 ${isScrolled ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}>
+    <nav className={navClasses}>
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
           <img src={logoPaw} alt="Dog Mom’s Kitchen" className="w-8 h-8" />
