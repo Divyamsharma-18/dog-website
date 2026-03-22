@@ -12,6 +12,11 @@ export const products: Product[] = [
     price: 349,
     category: "Meals",
     image: product1,
+    nutrition: [
+      { label: "Protein", value: "Min 14%" },
+      { label: "Fat", value: "Min 8%" },
+      { label: "Fiber", value: "Max 2%" }
+    ]
   },
   {
     id: 2,
@@ -20,6 +25,11 @@ export const products: Product[] = [
     price: 199,
     category: "Bakery",
     image: product2,
+    nutrition: [
+      { label: "Crude Protein", value: "10%" },
+      { label: "Crude Fat", value: "12%" },
+      { label: "Moisture", value: "Max 15%" }
+    ]
   },
   {
     id: 3,
@@ -28,6 +38,11 @@ export const products: Product[] = [
     price: 399,
     category: "Grain-Free Meals",
     image: product3,
+    nutrition: [
+      { label: "Protein", value: "Min 16%" },
+      { label: "Fat", value: "Min 10%" },
+      { label: "Kcal/kg", value: "1250" }
+    ]
   },
   {
     id: 4,
@@ -36,6 +51,11 @@ export const products: Product[] = [
     price: 499,
     category: "Festive Treats",
     image: product4,
+    nutrition: [
+      { label: "Protein", value: "8%" },
+      { label: "Fat", value: "10%" },
+      { label: "Fiber", value: "Max 3%" }
+    ]
   },
   {
     id: 5,
@@ -44,6 +64,11 @@ export const products: Product[] = [
     price: 249,
     category: "Treats",
     image: product1,
+    nutrition: [
+      { label: "Crude Protein", value: "Min 70%" },
+      { label: "Crude Fat", value: "Min 2%" },
+      { label: "Moisture", value: "Max 12%" }
+    ]
   },
   {
     id: 6,
@@ -52,6 +77,11 @@ export const products: Product[] = [
     price: 149,
     category: "Munchies",
     image: product2,
+    nutrition: [
+      { label: "Protein", value: "9%" },
+      { label: "Fat", value: "7%" },
+      { label: "Fiber", value: "Max 4%" }
+    ]
   },
   {
     id: 7,
@@ -60,6 +90,11 @@ export const products: Product[] = [
     price: 379,
     category: "Meals",
     image: product3,
+    nutrition: [
+      { label: "Protein", value: "Min 12%" },
+      { label: "Fat", value: "Min 6%" },
+      { label: "Omega 3", value: "Min 1.5%" }
+    ]
   },
   {
     id: 8,
@@ -68,6 +103,11 @@ export const products: Product[] = [
     price: 349,
     category: "Festive Treats",
     image: product4,
+    nutrition: [
+      { label: "Protein", value: "8%" },
+      { label: "Fat", value: "9%" },
+      { label: "Fiber", value: "Max 2.5%" }
+    ]
   },
 ];
 

@@ -7,6 +7,7 @@ export interface Product {
   price: number;
   category: string;
   image: string;
+  nutrition?: { label: string; value: string }[];
 }
 
 export interface CartItem extends Product {
