@@ -1,5 +1,10 @@
 import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 
+export interface ProductVariant {
+  size: string;
+  price: number;
+}
+
 export interface Product {
   id: number;
   name: string;
@@ -8,17 +13,20 @@ export interface Product {
   category: string;
   image: string;
   nutrition?: { label: string; value: string }[];
+  variants?: ProductVariant[];
 }
 
 export interface CartItem extends Product {
   quantity: number;
+  selectedVariant?: ProductVariant;
+  cartKey: string; // unique key: id + variant size
 }
 
 interface CartContextType {
   items: CartItem[];
-  addToCart: (product: Product, quantity?: number) => void;
-  removeFromCart: (productId: number) => void;
-  updateQuantity: (productId: number, quantity: number) => void;
+  addToCart: (product: Product, quantity?: number, variant?: ProductVariant) => void;
+  removeFromCart: (cartKey: string) => void;
+  updateQuantity: (cartKey: string, quantity: number) => void;
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
@@ -31,6 +39,8 @@ interface CartContextType {
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
+
+const getItemPrice = (item: CartItem) => item.selectedVariant?.price ?? item.price;
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>(() => {
@@ -69,31 +79,32 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem("cart_verified_pincode", verifiedPincode);
   }, [verifiedPincode]);
 
-  const addToCart = useCallback((product: Product, quantity = 1) => {
+  const addToCart = useCallback((product: Product, quantity = 1, variant?: ProductVariant) => {
+    const cartKey = variant ? `${product.id}-${variant.size}` : `${product.id}`;
     setItems((prev) => {
       if (prev.length === 0 && !hasCheckedPincode) {
         setShowPincodeModal(true);
       }
-      const existing = prev.find((i) => i.id === product.id);
+      const existing = prev.find((i) => i.cartKey === cartKey);
       if (existing) {
         return prev.map((i) =>
-          i.id === product.id ? { ...i, quantity: i.quantity + quantity } : i
+          i.cartKey === cartKey ? { ...i, quantity: i.quantity + quantity } : i
         );
       }
-      return [...prev, { ...product, quantity }];
+      return [...prev, { ...product, quantity, selectedVariant: variant, cartKey }];
     });
   }, [hasCheckedPincode]);
 
-  const removeFromCart = useCallback((productId: number) => {
-    setItems((prev) => prev.filter((i) => i.id !== productId));
+  const removeFromCart = useCallback((cartKey: string) => {
+    setItems((prev) => prev.filter((i) => i.cartKey !== cartKey));
   }, []);
 
-  const updateQuantity = useCallback((productId: number, quantity: number) => {
+  const updateQuantity = useCallback((cartKey: string, quantity: number) => {
     if (quantity <= 0) {
-      setItems((prev) => prev.filter((i) => i.id !== productId));
+      setItems((prev) => prev.filter((i) => i.cartKey !== cartKey));
     } else {
       setItems((prev) =>
-        prev.map((i) => (i.id === productId ? { ...i, quantity } : i))
+        prev.map((i) => (i.cartKey === cartKey ? { ...i, quantity } : i))
       );
     }
   }, []);
@@ -101,7 +112,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const clearCart = useCallback(() => setItems([]), []);
 
   const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
-  const totalPrice = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const totalPrice = items.reduce((sum, i) => sum + getItemPrice(i) * i.quantity, 0);
 
   return (
     <CartContext.Provider
