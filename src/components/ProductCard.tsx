@@ -77,7 +77,7 @@ const ProductCard = ({ product }: { product: Product }) => {
                     : "bg-muted text-muted-foreground border-border hover:border-primary/50"
                 }`}
               >
-                {v.size} — ₹{v.price}
+                {v.size}
               </button>
             ))}
           </div>
