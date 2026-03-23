@@ -1,18 +1,23 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useCart, type Product } from "@/lib/cart-context";
+import { useCart, type Product, type ProductVariant } from "@/lib/cart-context";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 
 const ProductCard = ({ product }: { product: Product }) => {
   const [quantity, setQuantity] = useState(1);
   const [isMobileFlipped, setIsMobileFlipped] = useState(false);
+  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | undefined>(
+    product.variants?.[0]
+  );
   const { addToCart } = useCart();
 
+  const displayPrice = selectedVariant?.price ?? product.price;
+
   const handleAdd = () => {
-    addToCart(product, quantity);
-    toast.success(`${product.name} added to cart!`);
+    addToCart(product, quantity, selectedVariant);
+    toast.success(`${product.name}${selectedVariant ? ` (${selectedVariant.size})` : ""} added to cart!`);
     setQuantity(1);
   };
 
@@ -58,8 +63,28 @@ const ProductCard = ({ product }: { product: Product }) => {
         <span className="text-xs font-medium text-primary">{product.category}</span>
         <h3 className="font-display font-semibold text-[#1c2840] mt-1">{product.name}</h3>
         <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{product.description}</p>
+
+        {/* Variant Selector */}
+        {product.variants && product.variants.length > 0 && (
+          <div className="flex gap-1.5 mt-3 flex-wrap">
+            {product.variants.map((v) => (
+              <button
+                key={v.size}
+                onClick={() => setSelectedVariant(v)}
+                className={`px-2.5 py-1 rounded-full text-xs font-medium border transition-colors ${
+                  selectedVariant?.size === v.size
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-muted text-muted-foreground border-border hover:border-primary/50"
+                }`}
+              >
+                {v.size} — ₹{v.price}
+              </button>
+            ))}
+          </div>
+        )}
+
         <div className="flex items-center justify-between mt-4">
-          <span className="text-lg font-bold text-[#1c2840]">${product.price.toFixed(2)}</span>
+          <span className="text-lg font-bold text-[#1c2840]">₹{displayPrice * quantity}</span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setQuantity(Math.max(1, quantity - 1))}
