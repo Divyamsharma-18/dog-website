@@ -16,9 +16,9 @@ const Shop = () => {
         p.description.toLowerCase().includes(search.toLowerCase());
       const matchCategory = category === "All" || p.category === category;
       let matchPrice = true;
-      if (priceRange === "under15") matchPrice = p.price < 15;
-      else if (priceRange === "15to30") matchPrice = p.price >= 15 && p.price <= 30;
-      else if (priceRange === "over30") matchPrice = p.price > 30;
+      if (priceRange === "under200") matchPrice = p.price < 200;
+      else if (priceRange === "200to500") matchPrice = p.price >= 200 && p.price <= 500;
+      else if (priceRange === "over500") matchPrice = p.price > 500;
       return matchSearch && matchCategory && matchPrice;
     });
   }, [search, category, priceRange]);
@@ -66,9 +66,9 @@ const Shop = () => {
             className="px-4 py-2 rounded-lg border border-border bg-card text-foreground text-sm"
           >
             <option value="all">All Prices</option>
-            <option value="under15">Under $15</option>
-            <option value="15to30">$15 - $30</option>
-            <option value="over30">Over $30</option>
+            <option value="under200">Under ₹200</option>
+            <option value="200to500">₹200 - ₹500</option>
+            <option value="over500">Over ₹500</option>
           </select>
         </div>
 
