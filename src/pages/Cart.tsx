@@ -21,28 +21,21 @@ const Cart = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
 
+  const getItemPrice = (item: typeof items[0]) => item.selectedVariant?.price ?? item.price;
+
   const handleWhatsAppOrder = () => {
-    if (!customerName.trim()) {
-      toast.error("Please enter your name");
-      return;
-    }
-    if (!address.trim()) {
-      toast.error("Please enter your delivery address");
-      return;
-    }
-    if (!phoneNumber.trim()) {
-      toast.error("Please enter your phone number");
-      return;
-    }
-    if (!emailAddress.trim()) {
-      toast.error("Please enter your email address");
-      return;
-    }
-    const lines = items.map(
-      (item) => `• ${item.name} x${item.quantity} — $${(item.price * item.quantity).toFixed(2)}`
-    );
+    if (!customerName.trim()) { toast.error("Please enter your name"); return; }
+    if (!address.trim()) { toast.error("Please enter your delivery address"); return; }
+    if (!phoneNumber.trim()) { toast.error("Please enter your phone number"); return; }
+    if (!emailAddress.trim()) { toast.error("Please enter your email address"); return; }
+
+    const lines = items.map((item) => {
+      const price = getItemPrice(item);
+      const sizeInfo = item.selectedVariant ? ` (${item.selectedVariant.size})` : "";
+      return `• ${item.name}${sizeInfo} x${item.quantity} — ₹${(price * item.quantity)}`;
+    });
     const message = encodeURIComponent(
-      `🐾 Dog Mom's Kitchen Order\n\n👤 Name: ${customerName.trim()}\n📞 Phone: ${phoneNumber.trim()}\n✉️ Email: ${emailAddress.trim()}\n📍 Address: ${address.trim()}\n📮 Pincode: ${verifiedPincode}\n\n${lines.join("\n")}\n\nTotal: $${totalPrice.toFixed(2)}`
+      `🐶 Dog Mom's Kitchen Order\n\n👤 Name: ${customerName.trim()}\n📞 Phone: ${phoneNumber.trim()}\n✉️ Email: ${emailAddress.trim()}\n📍 Address: ${address.trim()}\n📮 Pincode: ${verifiedPincode}\n\n${lines.join("\n")}\n\nTotal: ₹${totalPrice}`
     );
     window.open(`https://wa.me/?text=${message}`, "_blank");
   };
@@ -70,46 +63,52 @@ const Cart = () => {
         </h1>
 
         <div className="space-y-4">
-          {items.map((item) => (
-            <motion.div
-              key={item.id}
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="flex gap-4 bg-card border border-border rounded-lg p-4"
-            >
-              <img src={item.image} alt={item.name} className="w-20 h-20 rounded-md object-cover" />
-              <div className="flex-1">
-                <h3 className="font-display font-semibold text-foreground">{item.name}</h3>
-                <p className="text-sm text-muted-foreground">${item.price.toFixed(2)} each</p>
-                <div className="flex items-center gap-3 mt-2">
-                  <button
-                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                    className="w-7 h-7 rounded-md border border-border flex items-center justify-center text-muted-foreground hover:text-foreground"
-                  >
-                    <Minus className="w-3 h-3" />
-                  </button>
-                  <span className="text-sm font-medium">{item.quantity}</span>
-                  <button
-                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                    className="w-7 h-7 rounded-md border border-border flex items-center justify-center text-muted-foreground hover:text-foreground"
-                  >
-                    <Plus className="w-3 h-3" />
-                  </button>
-                  <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="ml-auto text-destructive hover:text-destructive/80"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
+          {items.map((item) => {
+            const price = getItemPrice(item);
+            return (
+              <motion.div
+                key={item.cartKey}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="flex gap-4 bg-card border border-border rounded-lg p-4"
+              >
+                <img src={item.image} alt={item.name} className="w-20 h-20 rounded-md object-cover" />
+                <div className="flex-1">
+                  <h3 className="font-display font-semibold text-foreground">{item.name}</h3>
+                  {item.selectedVariant && (
+                    <span className="text-xs font-medium text-primary">{item.selectedVariant.size}</span>
+                  )}
+                  <p className="text-sm text-muted-foreground">₹{price} each</p>
+                  <div className="flex items-center gap-3 mt-2">
+                    <button
+                      onClick={() => updateQuantity(item.cartKey, item.quantity - 1)}
+                      className="w-7 h-7 rounded-md border border-border flex items-center justify-center text-muted-foreground hover:text-foreground"
+                    >
+                      <Minus className="w-3 h-3" />
+                    </button>
+                    <span className="text-sm font-medium">{item.quantity}</span>
+                    <button
+                      onClick={() => updateQuantity(item.cartKey, item.quantity + 1)}
+                      className="w-7 h-7 rounded-md border border-border flex items-center justify-center text-muted-foreground hover:text-foreground"
+                    >
+                      <Plus className="w-3 h-3" />
+                    </button>
+                    <button
+                      onClick={() => removeFromCart(item.cartKey)}
+                      className="ml-auto text-destructive hover:text-destructive/80"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div className="text-right">
-                <span className="font-bold text-foreground">${(item.price * item.quantity).toFixed(2)}</span>
-              </div>
-            </motion.div>
-          ))}
+                <div className="text-right">
+                  <span className="font-bold text-foreground">₹{price * item.quantity}</span>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Customer Details */}
@@ -117,56 +116,26 @@ const Cart = () => {
           <h2 className="font-display text-lg font-semibold text-foreground">Your Details</h2>
           <div>
             <label className="text-sm text-muted-foreground mb-1 block">Full Name</label>
-            <Input
-              placeholder="Enter your full name"
-              value={customerName}
-              onChange={(e) => setCustomerName(e.target.value)}
-              maxLength={100}
-            />
+            <Input placeholder="Enter your full name" value={customerName} onChange={(e) => setCustomerName(e.target.value)} maxLength={100} />
           </div>
           <div>
             <label className="text-sm text-muted-foreground mb-1 block">Delivery Address</label>
-            <Textarea
-              placeholder="Enter your complete delivery address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              maxLength={500}
-              rows={3}
-            />
+            <Textarea placeholder="Enter your complete delivery address" value={address} onChange={(e) => setAddress(e.target.value)} maxLength={500} rows={3} />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="text-sm text-muted-foreground mb-1 block">Phone Number</label>
-              <Input
-                type="tel"
-                placeholder="Enter your phone number"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                maxLength={20}
-              />
+              <Input type="tel" placeholder="Enter your phone number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} maxLength={20} />
             </div>
             <div>
               <label className="text-sm text-muted-foreground mb-1 block">Email Address</label>
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                value={emailAddress}
-                onChange={(e) => setEmailAddress(e.target.value)}
-                maxLength={100}
-              />
+              <Input type="email" placeholder="Enter your email address" value={emailAddress} onChange={(e) => setEmailAddress(e.target.value)} maxLength={100} />
             </div>
           </div>
           <div>
             <label className="text-sm text-muted-foreground mb-1 block">Delivery Pincode</label>
-            <Input
-              value={verifiedPincode || "Not provided"}
-              readOnly
-              disabled
-              className="bg-muted text-muted-foreground cursor-not-allowed"
-            />
-            <p className="text-xs text-muted-foreground mt-1">
-              Auto-filled from your delivery availability check.
-            </p>
+            <Input value={verifiedPincode || "Not provided"} readOnly disabled className="bg-muted text-muted-foreground cursor-not-allowed" />
+            <p className="text-xs text-muted-foreground mt-1">Auto-filled from your delivery availability check.</p>
           </div>
         </div>
 
@@ -174,19 +143,13 @@ const Cart = () => {
         <div className="mt-4 bg-card border border-border rounded-lg p-6">
           <div className="flex justify-between items-center mb-4">
             <span className="text-lg font-display font-semibold text-foreground">Grand Total</span>
-            <span className="text-2xl font-bold text-primary">${totalPrice.toFixed(2)}</span>
+            <span className="text-2xl font-bold text-primary">₹{totalPrice}</span>
           </div>
-          <Button
-            onClick={handleWhatsAppOrder}
-            className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base py-6"
-            size="lg"
-          >
+          <Button onClick={handleWhatsAppOrder} className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base py-6" size="lg">
             <WhatsAppIcon className="sm:!w-5 sm:!h-5 !w-4 !h-4" />
             Place Order via WhatsApp
           </Button>
-          <p className="text-xs text-muted-foreground text-center mt-3">
-            You'll be redirected to WhatsApp with your order details pre-filled
-          </p>
+          <p className="text-xs text-muted-foreground text-center mt-3">You'll be redirected to WhatsApp with your order details pre-filled</p>
         </div>
       </div>
     </div>
