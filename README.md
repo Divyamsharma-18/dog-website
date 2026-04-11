@@ -31,27 +31,27 @@ This project leverages a cutting-edge frontend stack:
 To run this project locally, make sure you have Node.js installed, then follow these simple steps:
 
 1. **Clone the repository** (if you haven't already):
-   \`\`\`bash
-   git clone <repository-url>
+   ```bash
+   git clone https://github.com/Divyamsharma-18/happy-paws-pantry
    cd happy-paws-pantry
-   \`\`\`
+   ```
 
 2. **Install dependencies:**
-   \`\`\`bash
+   ``` bash
    npm install
-   \`\`\`
+   ```
 
 3. **Start the development server:**
-   \`\`\`bash
+   ``` bash
    npm run dev
-   \`\`\`
+   ```
 
 4. **Open in browser:**
    Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 happy-paws-pantry/
 ├── src/
 │   ├── components/      # Reusable UI components (Navbar, Footer, PincodeModal, ui/)
@@ -64,7 +64,7 @@ happy-paws-pantry/
 ├── public/              # Static assets
 ├── tailwind.config.ts   # Tailwind CSS configuration
 └── package.json         # Project dependencies and scripts
-\`\`\`
+```
 
 ## 🎨 Design Philosophy
 
@@ -75,9 +75,9 @@ Happy Paws Pantry was built with a "premium first" design approach. Every shadow
 Contributions are welcome! Please feel free to submit a Pull Request if you have suggestions for improvement.
 
 1. Fork the Project
-2. Create your Feature Branch (\`git checkout -b feature/AmazingFeature\`)
-3. Commit your Changes (\`git commit -m 'Add some AmazingFeature'\`)
-4. Push to the Branch (\`git push origin feature/AmazingFeature\`)
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 ---
