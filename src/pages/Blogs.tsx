@@ -34,7 +34,7 @@ const Blogs = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-display font-bold text-[#1c2840] mb-6"
           >
-            Dog Mom's Kitchen Blog
+            Happy Paws Pantry Blog
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

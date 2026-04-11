@@ -10,7 +10,7 @@ import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
 
 const reviews = [
-  { name: "Priya S.", rating: 5, text: "My indie dog has never been healthier! Dog Mom's Kitchen meals transformed his coat and energy levels.", avatar: "P" },
+  { name: "Priya S.", rating: 5, text: "My indie dog has never been healthier! Happy Paws Pantry meals transformed his coat and energy levels.", avatar: "P" },
   { name: "Rahul K.", rating: 5, text: "Finally, real homemade food I can trust. My Lab goes crazy for the chicken meal. Pure quality!", avatar: "R" },
   { name: "Ananya M.", rating: 5, text: "The pupcakes were a hit at my pup's birthday party! Fresh, safe, and absolutely delicious.", avatar: "A" },
   { name: "Vikram T.", rating: 4, text: "Great quality treats for training. My Golden loves the jerky strips. Will definitely reorder.", avatar: "V" },

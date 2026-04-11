@@ -10,7 +10,7 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-[#1c2840] mb-6">About Dog Mom’s Kitchen</h1>
             <p className="text-lg text-[#8b8c8d] leading-relaxed">
-            Dog Mom's Kitchen was born from a simple belief: our dogs deserve food that's as pure, fresh, and wholesome as what we eat ourselves. Every meal is 100% homemade, made fresh daily with human-grade ingredients and zero preservatives.
+            Happy Paws Pantry was born from a simple belief: our dogs deserve food that's as pure, fresh, and wholesome as what we eat ourselves. Every meal is 100% homemade, made fresh daily with human-grade ingredients and zero preservatives.
             </p>
           </motion.div>
         </div>
@@ -32,7 +32,7 @@ const About = () => {
                 So I started cooking for them, fresh, wholesome meals made from real ingredients. When I saw how much healthier and happier they became, I knew other dog parents deserved the same option.
               </p>
               <p className="text-muted-foreground">
-                That's how Dog Mom's Kitchen was born, from a mother's love for her dogs, and a commitment to serving only <strong className="text-[#1c2840]">Pure. Fresh. Gourmet.</strong> food.
+                That's how Happy Paws Pantry was born, from a mother's love for her dogs, and a commitment to serving only <strong className="text-[#1c2840]">Pure. Fresh. Gourmet.</strong> food.
               </p>
             </motion.div>
           </div>

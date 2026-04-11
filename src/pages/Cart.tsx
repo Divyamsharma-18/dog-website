@@ -35,7 +35,7 @@ const Cart = () => {
       return `• ${item.name}${sizeInfo} x${item.quantity} — ₹${(price * item.quantity)}`;
     });
     const message = encodeURIComponent(
-      `🐶 Dog Mom's Kitchen Order\n\n👤 Name: ${customerName.trim()}\n📞 Phone: ${phoneNumber.trim()}\n✉️ Email: ${emailAddress.trim()}\n📍 Address: ${address.trim()}\n📮 Pincode: ${verifiedPincode}\n\n${lines.join("\n")}\n\nTotal: ₹${totalPrice}`
+      `🐶 Happy Paws Pantry Order\n\n👤 Name: ${customerName.trim()}\n📞 Phone: ${phoneNumber.trim()}\n✉️ Email: ${emailAddress.trim()}\n📍 Address: ${address.trim()}\n📮 Pincode: ${verifiedPincode}\n\n${lines.join("\n")}\n\nTotal: ₹${totalPrice}`
     );
     window.open(`https://wa.me/?text=${message}`, "_blank");
   };

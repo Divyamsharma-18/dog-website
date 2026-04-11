@@ -8,7 +8,7 @@ import {
 
 const faqs = [
   { q: "What ingredients do you use?", a: "We use 100% fresh, human-grade ingredients including farm-fresh proteins (chicken, lamb, fish), seasonal vegetables, fruits, and superfoods. Absolutely no fillers, preservatives, or artificial sweeteners." },
-  { q: "Is Dog Mom's Kitchen food vet approved?", a: "Yes! All our recipes are developed in consultation with veterinary nutritionists to ensure balanced and complete nutrition for your fur baby." },
+  { q: "Is Happy Paws Pantry food vet approved?", a: "Yes! All our recipes are developed in consultation with veterinary nutritionists to ensure balanced and complete nutrition for your fur baby." },
   { q: "Do you offer grain-free options?", a: "Absolutely! We have a dedicated Grain-Free Meals category for dogs with sensitivities. Our treats and bakery items also include gluten-free options." },
   { q: "How do I place an order?", a: "Simply add items to your cart and place your order via WhatsApp. We'll confirm your order, discuss delivery details, and get your pup's fresh food ready!" },
   { q: "How is the food stored and delivered?", a: "All meals are made fresh daily. We recommend refrigerating meals and consuming within 3 days. Treats and bakery items can be stored in an airtight container for up to a week." },
