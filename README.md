@@ -1,6 +1,6 @@
 # 🐾 Happy Paws Pantry
 
-![Happy Paws Pantry Hero](https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1200)
+<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1200" alt="Happy Paws Pantry Hero" width="500" />
 
 Welcome to **Happy Paws Pantry** – the premium destination for dog parents! This beautifully crafted web application is designed to provide high-quality nutritional foods, durable toys, and educational resources to ensure your furry friends live their best, healthiest lives.
 
