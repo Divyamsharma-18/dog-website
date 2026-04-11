@@ -2,26 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, User } from "lucide-react";
 
-const BLOG_POSTS = [
-  {
-    id: 1,
-    title: "Understanding Your Dog's Nutritional Needs",
-    excerpt: "A comprehensive guide to understanding what nutrients your dog needs at different stages of their life.",
-    date: "Nov 05, 2023",
-    author: "Dr. Smith",
-    image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=800",
-    slug: "understanding-nutritional-needs"
-  },
-  {
-    id: 2,
-    title: "The Best Toys for Heavy Chewers",
-    excerpt: "Tired of toys getting destroyed in minutes? Here is our curated list of the best durable toys for heavy chewers.",
-    date: "Dec 18, 2023",
-    author: "Sarah Jones",
-    image: "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&q=80&w=800",
-    slug: "best-toys-for-heavy-chewers"
-  }
-];
+import { BLOG_POSTS } from "@/data/blogs";
 
 const Blogs = () => {
   return (

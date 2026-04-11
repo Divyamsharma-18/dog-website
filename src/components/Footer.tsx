@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logoPaw from "@/assets/logo-paw.png";
+import { Github, Twitter, Heart } from "lucide-react";
 
 const Footer = () => {
   const handlePolicyNavClick = (to: string) => {
@@ -18,7 +19,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={logoPaw} alt="Happy Paws Pantry" className="hidden sm:block w-8 h-8" />
+              <img src={logoPaw} alt="Happy Paws Pantry" className="hidden sm:block w-12 h-12" />
               <span className="font-display text-xl text-[#e6dfd6] font-bold">Happy Paws Pantry</span>
             </div>
             <p className="text-sm text-[#e6dfd6]">
@@ -61,7 +62,44 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-2 -mb-4 pt-8 text-center text-sm text-[#e6dfd6]">
-          © {new Date().getFullYear()} Happy Paws Pantry. All rights reserved.
+          <div className="flex items-center justify-center gap-1.5 mt-1 sm:mt-0">
+             Made with 
+           <Heart
+          className="inline-block w-4 h-4 text-red-500 mx-1 animate-pulse relative top-[0.4px]"
+          fill="currentColor"
+        />
+        by
+        <a
+          href="https://divyamsharma.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-primary hover:underline transition-colors"
+        >
+          Divyam Sharma
+        </a>
+        <span className="inline-flex items-center gap-0.5">
+          <a
+            href="https://x.com/Heydivyamsharma"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X profile"
+            className="inline-flex items-center justify-center w-6 h-6 rounded-full hover:bg-white/20 dark:hover:bg-white/10 transition-colors"
+            title="X"
+          >
+            <Twitter className="w-4 h-4 relative top-[1.2px]" />
+          </a>
+          <a
+            href="https://github.com/Divyamsharma-18"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            className="inline-flex items-center justify-center w-6 h-6 rounded-full hover:bg-white/20 dark:hover:bg-white/10 transition-colors"
+            title="GitHub"
+          >
+            <Github className="w-4 h-4 relative top-[2px]" />
+          </a>
+        </span>
+      </div>
         </div>
       </div>
     </footer>

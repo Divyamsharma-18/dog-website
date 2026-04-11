@@ -15,6 +15,7 @@ import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Blogs from "./pages/Blogs";
+import BlogPost from "./pages/BlogPost";
 import PolicyPage from "./pages/PolicyPage";
 import NotFound from "./pages/NotFound";
 
@@ -48,6 +49,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/blogs" element={<Blogs />} />
+              <Route path="/blogs/:slug" element={<BlogPost />} />
               <Route path="/:slug" element={<PolicyPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
