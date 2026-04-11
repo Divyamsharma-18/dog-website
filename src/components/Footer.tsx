@@ -18,8 +18,8 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={logoPaw} alt="Dog Mom’s Kitchen" className="hidden sm:block w-8 h-8" />
-              <span className="font-display text-xl text-[#e6dfd6] font-bold">Dog Mom’s Kitchen</span>
+              <img src={logoPaw} alt="Happy Paws Pantry" className="hidden sm:block w-8 h-8" />
+              <span className="font-display text-xl text-[#e6dfd6] font-bold">Happy Paws Pantry</span>
             </div>
             <p className="text-sm text-[#e6dfd6]">
               Premium nutrition crafted with love for your furry family members.
@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-2 -mb-4 pt-8 text-center text-sm text-[#e6dfd6]">
-          © {new Date().getFullYear()} Dog Mom’s Kitchen. All rights reserved.
+          © {new Date().getFullYear()} Happy Paws Pantry. All rights reserved.
         </div>
       </div>
     </footer>

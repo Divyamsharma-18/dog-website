@@ -37,8 +37,8 @@ const Navbar = () => {
     <nav className={navClasses}>
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoPaw} alt="Dog Mom’s Kitchen" className="w-8 h-8" />
-          <span className="font-display text-xl font-bold text-[#1c2840]">Dog Mom’s Kitchen</span>
+          <img src={logoPaw} alt="Happy Paws Pantry" className="w-8 h-8" />
+          <span className="font-display text-xl font-bold text-[#1c2840]">Happy Paws Pantry</span>
         </Link>
 
         {/* Desktop */}

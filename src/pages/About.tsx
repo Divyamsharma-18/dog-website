@@ -8,7 +8,7 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-[#1c2840] mb-6">About Dog Mom’s Kitchen</h1>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-[#1c2840] mb-6">About Happy Paws Pantry</h1>
             <p className="text-lg text-[#8b8c8d] leading-relaxed">
             Happy Paws Pantry was born from a simple belief: our dogs deserve food that's as pure, fresh, and wholesome as what we eat ourselves. Every meal is 100% homemade, made fresh daily with human-grade ingredients and zero preservatives.
             </p>
@@ -21,7 +21,7 @@ const About = () => {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={foundersImg} alt="Dog Mom’s Kitchen founders" className="rounded-xl shadow-lg w-full" />
+              <img src={foundersImg} alt="Happy Paws Pantry founders" className="rounded-xl shadow-lg w-full" />
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="font-display text-3xl font-bold text-[#1c2840] mb-4">Founder's Note</h2>

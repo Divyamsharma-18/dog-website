@@ -153,7 +153,7 @@ const Index = () => {
             Why Dog Parents <span className="text-primary">Love Us</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              At Dog Mom’s Kitchen, we believe every dog deserves food made from real, wholesome ingredients, no fillers, no artificial preservatives. Our recipes are developed with veterinary nutritionists and sourced from trusted local farms.
+              At Happy Paws Pantry, we believe every dog deserves food made from real, wholesome ingredients, no fillers, no artificial preservatives. Our recipes are developed with veterinary nutritionists and sourced from trusted local farms.
             </p>
           </motion.div>
         </div>
